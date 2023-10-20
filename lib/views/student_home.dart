@@ -5,6 +5,7 @@ import 'package:elearning/views/time_table_view.dart';
 import 'package:flutter/material.dart';
 
 import 'attendanceView.dart';
+import 'holidays_view.dart';
 
 class StudentHome extends StatelessWidget {
   const StudentHome({super.key});
@@ -54,6 +55,12 @@ class StudentHome extends StatelessWidget {
                     secoundColor: Colors.blue,
                     secoundImage: "Assets/result.png",
                     secoundTitle: "Results",
+                    onTap1: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return const holiDaysView();
+                      }));
+
+                    },
                   ),SquareComp(
                     firstColor: const Color.fromARGB(255, 64, 230, 70),
                     firstImage: "Assets/assignmentpng.png",

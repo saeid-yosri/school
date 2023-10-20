@@ -6,6 +6,7 @@ import 'package:elearning/views/time_table_view.dart';
 import 'package:flutter/material.dart';
 
 import 'attendanceView.dart';
+import 'holidays_view.dart';
 
 class ParentHome extends StatelessWidget {
   const ParentHome({super.key});
@@ -64,6 +65,11 @@ class ParentHome extends StatelessWidget {
                      Navigator.push(context, MaterialPageRoute(builder: (context){
                       return const AssignmentsView();
                      }));
+                    },
+                    onTap1: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return const holiDaysView();
+                      }));
                     },
                   ),
 
