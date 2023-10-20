@@ -1,5 +1,6 @@
 import 'package:elearning/Customs/custom_app_bar.dart';
 import 'package:elearning/views/assignmentsView.dart';
+import 'package:elearning/views/exams_view.dart';
 import 'package:elearning/views/sign_up.dart';
 import 'package:elearning/views/time_table_view.dart';
 import 'package:flutter/material.dart';
@@ -83,13 +84,19 @@ class StudentHome extends StatelessWidget {
 
                   ),
 
-                  const SquareComp(
+                   SquareComp(
                     firstColor:Colors.pink,
                     firstImage: "Assets/exam.png",
                     firstTitle:  "Exams",
                     secoundColor:  Colors.teal,
                     secoundImage: "Assets/book.png",
                     secoundTitle: "E-Book",
+                    onTap1: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return  ExamsPage();
+                      }));
+
+                    },
                   ),SquareComp(
                     firstColor: Colors.pink[200],
                     firstImage: "Assets/woman.png",
@@ -137,10 +144,10 @@ final dynamic secoundTitle;
               height: 90,
               color: firstColor,
               child: Column(
-          
+
                 children: [
                               const SizedBox(height: 10,),
-          
+
                   Image.asset(
                     firstImage,
                     width: 50,
