@@ -100,7 +100,7 @@ class StudentHome extends StatelessWidget {
                   ),SquareComp(
                     firstColor: Colors.pink[200],
                     firstImage: "Assets/woman.png",
-                    firstTitle:  "Parent guide",
+                    firstTitle:  "Student guide",
                     secoundColor: Colors.red,
                     secoundImage: "Assets/health.png",
                     secoundTitle: "Health tips",

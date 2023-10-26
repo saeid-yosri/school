@@ -4,6 +4,8 @@ import 'package:elearning/Customs/custom_text_form_field.dart';
 import 'package:elearning/views/type_view.dart';
 import 'package:flutter/material.dart';
 
+import 'login_view.dart';
+
 class SignupView extends StatelessWidget {
   const SignupView({super.key});
 
@@ -57,7 +59,7 @@ class SignupView extends StatelessWidget {
                   ),
                   CustomMainButton(text: "Sign up", onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return TypeView();
+                      return Loginview();
                     }));
                   }),
                    SizedBox(
