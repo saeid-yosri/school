@@ -17,7 +17,9 @@ class StudentHome extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const CustomAppBar(title: "Home"),
+            const CustomAppBar(title: "STUDENT HOME" ,
+              icon: Icons.school_outlined,
+            ),
             const SizedBox(
               height: 16,
             ),
@@ -38,14 +40,14 @@ class StudentHome extends StatelessWidget {
                     secoundImage: "Assets/time.png",
                     secoundTitle: "Time table",
                     onTap2: ()
-                     {
+                    {
                       Navigator.push(context, MaterialPageRoute(builder: (context){
                         return const TimeTableView();
                       }));
                     },
                   ),
-                   ExpandendComp(
-                    color: Color.fromARGB(255, 244, 219, 35),
+                  ExpandendComp(
+                    color: const Color.fromARGB(255, 244, 219, 35),
                     image: "Assets/anouncements.png",
                     title: "Announcements",
                   ),
@@ -84,7 +86,7 @@ class StudentHome extends StatelessWidget {
 
                   ),
 
-                   SquareComp(
+                  SquareComp(
                     firstColor:Colors.pink,
                     firstImage: "Assets/exam.png",
                     firstTitle:  "Exams",
@@ -93,14 +95,14 @@ class StudentHome extends StatelessWidget {
                     secoundTitle: "E-Book",
                     onTap1: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return  ExamsPage();
+                        return  const ExamsPage();
                       }));
 
                     },
                   ),SquareComp(
                     firstColor: Colors.pink[200],
                     firstImage: "Assets/woman.png",
-                    firstTitle:  "Student guide",
+                    firstTitle:  "Parent guide",
                     secoundColor: Colors.red,
                     secoundImage: "Assets/health.png",
                     secoundTitle: "Health tips",
@@ -118,18 +120,18 @@ class StudentHome extends StatelessWidget {
 class SquareComp extends StatelessWidget {
   const SquareComp(
       {super.key, required this.firstColor, required this.firstImage
-      ,required this.firstTitle,required this.secoundColor,required this.secoundImage,required this.secoundTitle,
-this.onTap1,this.onTap2
+        ,required this.firstTitle,required this.secoundColor,required this.secoundImage,required this.secoundTitle,
+        this.onTap1,this.onTap2
 
       });
   final dynamic firstColor;
   final dynamic firstImage;
-final dynamic firstTitle;
+  final dynamic firstTitle;
   final dynamic secoundColor;
   final dynamic secoundImage;
-final dynamic secoundTitle;
- final void Function()? onTap1;
- final void Function()? onTap2;
+  final dynamic secoundTitle;
+  final void Function()? onTap1;
+  final void Function()? onTap2;
 
   @override
   Widget build(BuildContext context) {
@@ -146,7 +148,7 @@ final dynamic secoundTitle;
               child: Column(
 
                 children: [
-                              const SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
 
                   Image.asset(
                     firstImage,
@@ -154,7 +156,7 @@ final dynamic secoundTitle;
                     height: 50,
                   ),
                   Text(
-                   firstTitle,
+                    firstTitle,
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -199,20 +201,21 @@ final dynamic secoundTitle;
 }
 
 class ExpandendComp extends StatelessWidget {
-   ExpandendComp(
+  ExpandendComp(
       {super.key,
-          this.fontSize,
-         this.fontWeight =FontWeight.bold,
+        this.fontSize,
+        this.fontWeight =FontWeight.bold,
         this.fontColor=Colors.white ,
-      required this.color,
-      required this.image,
-      required this.title});
+        required this.color,
+        required this.image,
+        required this.title, this.onTap});
   final Color color;
   final dynamic image;
   final String title;
-   double? fontSize;
-   FontWeight fontWeight =FontWeight.bold;
-   Color fontColor =Colors.white;
+  final void Function()? onTap;
+  double? fontSize;
+  FontWeight fontWeight =FontWeight.bold;
+  Color fontColor =Colors.white;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -232,7 +235,7 @@ class ExpandendComp extends StatelessWidget {
               width: 50,
               height: 50,
             ),
-             SizedBox(
+            const SizedBox(
               width: 50,
             ),
             Text(

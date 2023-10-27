@@ -1,5 +1,4 @@
 import 'package:elearning/Customs/custom_app_bar.dart';
-import 'package:elearning/views/assignmentsView.dart';
 import 'package:elearning/views/sign_up.dart';
 import 'package:elearning/views/student_home.dart';
 import 'package:elearning/views/time_table_view.dart';
@@ -17,7 +16,8 @@ class ParentHome extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const CustomAppBar(title: "Home"),
+            const CustomAppBar(title: "PARENT Home" ,
+            ),
             const SizedBox(
               height: 16,
             ),
@@ -25,16 +25,16 @@ class ParentHome extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
-                   ExpandendComp(
-                      color: Color.fromARGB(255, 34, 8, 164),
+                  ExpandendComp(
+                      color: const Color.fromARGB(255, 34, 8, 164),
                       image: "Assets/child.png",
                       title: "Children"),
                   SquareComp(
                     onTap1: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return const SignupView();
-                      }));
+                            return const SignupView();
+                          }));
                     },
                     firstColor: Colors.red,
                     firstImage: "Assets/user.png",
@@ -42,45 +42,30 @@ class ParentHome extends StatelessWidget {
                     secoundColor: Colors.orange,
                     secoundImage: "Assets/time.png",
                     secoundTitle: "Time table",
-                      onTap2: ()
-                     {
+                    onTap2: ()
+                    {
                       Navigator.push(context, MaterialPageRoute(builder: (context){
                         return const TimeTableView();
                       }));
                     },
                   ),
-                   ExpandendComp(
-                    color: Color.fromARGB(255, 244, 219, 35),
+                  ExpandendComp(
+                    color: const Color.fromARGB(255, 244, 219, 35),
                     image: "Assets/anouncements.png",
                     title: "Anouncements",
                   ),
                   SquareComp(
-                    firstColor: Colors.grey[800],
-                    firstImage: "Assets/holiday.png",
-                    firstTitle: "Holidays",
-                    secoundColor: const Color.fromARGB(255, 64, 230, 70),
-                    secoundImage: "Assets/assignmentpng.png",
-                    secoundTitle: "Assignment",
-                      onTap2: (){
-                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return const AssignmentsView();
-                     }));
-                    },
-                    onTap1: (){
+                    firstColor: Colors.pink[200],
+                    firstImage: "Assets/woman.png",
+                    firstTitle: "Parent guide",
+                    secoundColor: Colors.grey[800],
+                    secoundImage: "Assets/holiday.png",
+                    secoundTitle: "Holidays",
+                    onTap2: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context){
                         return const holiDaysView();
                       }));
                     },
-                  ),
-
-
-                  SquareComp(
-                    firstColor: Colors.pink[200],
-                    firstImage: "Assets/woman.png",
-                    firstTitle: "Parent guide",
-                    secoundColor: Colors.red,
-                    secoundImage: "Assets/health.png",
-                    secoundTitle: "Health tips",
                   ),
                   SquareComp(
                     secoundColor: Colors.teal,

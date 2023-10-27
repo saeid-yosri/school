@@ -82,12 +82,17 @@ class _LoginviewState extends State<Loginview> {
               isSelected
                   ? Column(
                       children: [
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8),
+                          child: Text("Use emil or Phone number to Login",style: TextStyle(color: Colors.grey)),
+                        ),
                         CustomTextFormField(
                             obscureText: false,
                             isPassword: false,
-                            lable: "School code"),
+                            lable: "email"),
                         const SizedBox(
                           height: 32,
+
                         ),
                         CustomTextFormField(
                             obscureText: false,

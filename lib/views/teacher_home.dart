@@ -15,8 +15,10 @@ class TeacherHome extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            CustomAppBar(title: "Home"),
-            SizedBox(
+            const CustomAppBar(title: "TEACHER Home",
+              icon: Icons.perm_identity_outlined,
+            ),
+            const SizedBox(
               height: 16,
             ),
             Padding(
@@ -24,31 +26,38 @@ class TeacherHome extends StatelessWidget {
               child: Column(
                 children: [
                   ExpandendComp(
-                      color: Color.fromARGB(255, 34, 8, 164),
-                      image: "Assets/child.png",
-                      title: "Children"),
+                      color: const Color.fromARGB(255, 34, 8, 164),
+                      image: "Assets/book.png",
+                      title: "Subjects",
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                              return const SignupView();
+                            }));
+                      }
+                  ),
                   SquareComp(
                     onTap1: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return SignupView();
-                      }));
+                            return const SignupView();
+                          }));
                     },
                     firstColor: Colors.red,
                     firstImage: "Assets/user.png",
-                    firstTitle: "E-Card",
+                    firstTitle: "Profile",
                     secoundColor: Colors.orange,
                     secoundImage: "Assets/time.png",
                     secoundTitle: "Time table",
-                      onTap2: ()
-                     {
+                    onTap2: ()
+                    {
                       Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return TimeTableView();
+                        return const TimeTableView();
                       }));
                     },
                   ),
                   ExpandendComp(
-                    color: Color.fromARGB(255, 244, 219, 35),
+                    color: const Color.fromARGB(255, 244, 219, 35),
                     image: "Assets/anouncements.png",
                     title: "Anouncements",
                   ),
@@ -57,18 +66,13 @@ class TeacherHome extends StatelessWidget {
                     firstImage: "Assets/holiday.png",
                     firstTitle: "Holidays",
                     onTap2: (){
-                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                      return AssignmentsView();
-                     }));
+                      Navigator.push(context, MaterialPageRoute(builder: (context){
+                        return const AssignmentsView();
+                      }));
                     },
                     secoundColor: const Color.fromARGB(255, 64, 230, 70),
                     secoundImage: "Assets/assignmentpng.png",
                     secoundTitle: "Assignment",
-                  ),
-                  ExpandendComp(
-                    color: Colors.grey,
-                    image: "Assets/bus.png",
-                    title: "Transportation",
                   ),
                   SquareComp(
                     firstColor: Colors.pink[200],
@@ -79,9 +83,10 @@ class TeacherHome extends StatelessWidget {
                     secoundTitle: "Health tips",
                   ),
                   ExpandendComp(
-                      color: Colors.teal,
-                      image: "Assets/offers.png",
-                      title: "Offers")
+                    color: Colors.pink,
+                    image: "Assets/exam.png",
+                    title: "Exams , Quizes",
+                  ),
                 ],
               ),
             )

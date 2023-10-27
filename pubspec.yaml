@@ -38,6 +38,8 @@ dependencies:
   google_nav_bar: ^5.0.6
   google_fonts: ^6.1.0
   font_awesome_flutter: ^10.6.0
+  flutter_calendar_carousel: ^2.4.2
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
